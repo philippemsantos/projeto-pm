@@ -1,8 +1,11 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-
+import os
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": [
+    "https://projeto-pm.netlify.app/"
+    "http://localhost:3000"
+]}})
 
 # Rota raiz
 @app.route("/")

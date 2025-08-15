@@ -6,7 +6,7 @@ function App(){
 
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:5000/api/hello")
+        axios.get("https://projeto-pm.onrender.com")
             .then(res => setMensagem(res.data.message))
             .catch(err => console.error(err));
     }, []);
