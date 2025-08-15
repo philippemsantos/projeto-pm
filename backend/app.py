@@ -1,16 +1,18 @@
-from flask import Flask
+from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Rota raiz
 @app.route("/")
 def home():
-    return "API funcionando!"
+    return jsonify({"message": "API funcionando!"})
 
 # Rota de teste
 @app.route("/teste")
 def teste():
-    return "Rota teste funcionando!"
+    return jsonify({"status": "ok", "data": [1,2,3]})
 
 if __name__ == "__main__":
     # Rodar na porta 5000
